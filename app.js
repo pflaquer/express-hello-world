@@ -20,6 +20,15 @@ app.get('/', (req, res) => {
   }
 });
 
+app.post('/login', (req, res) => {
+  // Check if the request body exists and has the valid value
+  if (req.body && req.body.value != validValue) {
+    res.status(401).send('Unauthorized');
+  } else {
+    res.send('Success! Access Granted...');
+  }
+});
+
 
 
 server.keepAliveTimeout = 120 * 1000;
