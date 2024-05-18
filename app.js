@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   // Check if the request body exists and has the valid value
-  if (req.body && req.body.value != validValue) {
+  if (req.body && req.body.value != 1) {
     res.send('Access Denied!');
   } else {
     res.type('html').send(html);
