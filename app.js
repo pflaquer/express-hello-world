@@ -6,6 +6,22 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+const validValue = "secret";
+
+// Use express.json() middleware to parse JSON body
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  // Check if the request body exists and has the valid value
+  if (req.body && req.body.value != validValue) {
+    res.send('Access Denied!');
+  } else {
+    res.type('html').send(html));
+  }
+});
+
+
+
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
