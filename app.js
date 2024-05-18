@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   if (req.body && req.body.value != validValue) {
     res.status(401).send('Unauthorized');
   } else {
-    res.type.('html').send(html);
+    res.type('html').send(html);
   }
 });
 
