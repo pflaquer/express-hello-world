@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   if (req.body && req.body.value != validValue) {
     res.send('Access Denied!');
   } else {
-    res.type('html').send(html));
+    res.type('html').send(html);
   }
 });
 
