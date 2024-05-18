@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => res.type('html').send(html));
+//app.get("/", (req, res) => res.type('html').send(html));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
@@ -13,10 +13,10 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   // Check if the request body exists and has the valid value
-  if (req.body && req.body.value === validValue) {
-    res.send('Access granted!');
-  } else {
+  if (req.body && req.body.value != validValue) {
     res.status(401).send('Unauthorized');
+  } else {
+    res.type.('html').send(html);
   }
 });
 
