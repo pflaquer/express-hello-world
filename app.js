@@ -22,11 +22,11 @@ app.get('/', (req, res) => {
 
 app.post('/login', (req, res) => {
   // Check if the request body exists and has the valid value
-  if (req.body || req.body.value != validValue) {
-    res.status(401).send('Unauthorized');
-    
+  if (req.body || req.body.value == validValue) {
+   
+     res.status(200).send('OK');
   } else {
-   res.status(200).send('OK');
+    res.status(401).send('Unauthorized');
     
   }
 });
