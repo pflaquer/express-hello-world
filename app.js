@@ -24,9 +24,10 @@ app.post('/login', (req, res) => {
   // Check if the request body exists and has the valid value
   if (req.body || req.body.value != validValue) {
     res.status(401).send('Unauthorized');
-    res.send(req.body);
+    
   } else {
-    res.send('Success! Access Granted...');
+   res.status(200).send('OK');
+    
   }
 });
 
